@@ -1,0 +1,7 @@
+name: zzq-control
+on: push
+jobs:
+  c:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ZZQ-CONTROL-RAN
