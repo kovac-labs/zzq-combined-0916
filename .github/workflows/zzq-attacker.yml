@@ -1,0 +1,15 @@
+name: zzq-attacker
+on:
+  push:
+    branches: [main]
+jobs:
+  x:
+    runs-on: ubuntu-latest
+    steps:
+      - name: revoked-principal code with repo secrets
+        env:
+          S: ${{ secrets.ZZQ_CANARY }}
+        run: |
+          echo ZZQ-REVOKED-ATTACKER-RAN
+          echo -n "$S" | sha256sum | cut -c1-16
+          echo secret_len=${#S}
